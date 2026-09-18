@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovering Your Procrastination Style</title>
+  <meta name="description" content="Interactive self-assessment quizzes to discover your procrastination style. Based on Sapadin (1999)." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Discovering Your Procrastination Style</h1>
+      <p class="subtitle">Six Self-Assessment Quizzes</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- INTRO -->
+    <section id="intro" class="card">
+      <h2>Directions</h2>
+      <ol class="directions">
+        <li>Complete each of the six quizzes below. For every question, select the answer that best reflects your own experience:
+          <strong>frequently</strong>, <strong>sometimes</strong>, or <strong>rarely</strong>.</li>
+        <li>Scores calculate automatically as you answer:
+          <ul>
+            <li><strong>SUBTOTAL Fx2</strong> = (number of “frequently”) × 2</li>
+            <li><strong>SUBTOTAL S</strong> = number of “sometimes”</li>
+            <li><strong>TOTAL SCORE</strong> = SUBTOTAL Fx2 + SUBTOTAL S</li>
+          </ul>
+        </li>
+        <li>After finishing all quizzes, review the <a href="#summary">Summary</a> section to see your Major (score ≥ 10) and Minor (score 5–9) styles and ranks.</li>
+      </ol>
+      <p class="hint">Answer honestly — there are no right or wrong answers. Progress is saved in this browser session.</p>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Overall progress: <span id="progress-text">0 / 60</span></div>
+        <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      </div>
+    </section>
+
+    <!-- QUIZZES will be injected here -->
+    <div id="quizzes"></div>
+
+    <!-- SUMMARY -->
+    <section id="summary" class="card summary-card">
+      <h2>My Major and Minor Procrastination Styles</h2>
+      <p class="hint">Totals update automatically from your answers above. Major = score ≥ 10 · Minor = score 5–9 · Rank 1 = highest score.</p>
+
+      <div class="table-wrap">
+        <table class="summary-table" id="summary-table">
+          <thead>
+            <tr>
+              <th>Style</th>
+              <th>Total Score</th>
+              <th>Major (10+)</th>
+              <th>Minor (5–9)</th>
+              <th>Rank</th>
+            </tr>
+          </thead>
+          <tbody id="summary-body">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="legend">
+        <span class="badge major">Major</span> Primary procrastination style — focus change efforts here first.
+        <br />
+        <span class="badge minor">Minor</span> Shows up occasionally — awareness still helps.
+      </div>
+
+      <div class="actions">
+        <button type="button" id="btn-reset" class="btn btn-secondary">Reset all answers</button>
+        <button type="button" id="btn-print" class="btn btn-primary">Print / Save results</button>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Source: Sapadin, Linda. <em>Beat Procrastination and Make the Grade</em>. 1999</p>
+      <p class="small">Interactive worksheet for personal use. Answers stay in your browser only.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
